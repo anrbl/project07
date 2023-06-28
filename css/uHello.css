@@ -1,0 +1,59 @@
+:root {
+    --c-main: #3e0f7c;
+    --c-point: #b80e0e;
+    --c-sub: #8d1891;
+
+    --c-b: #000;
+    --c-bb: #333;
+    --c-g6: #666;
+    --c-g9: #999;
+    --c-line: #ddd;
+    --c-ww: #e2e2e2;
+    --c-wb: #f9f9f9;
+    --c-w: #fff;
+
+    --line: 1px solid #ddd;
+    --line-b: 1px solid rgba(0, 0, 0, 0.3);
+    --line-w: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+.sub_content .slogan {
+    margin: 0 0 50px 0;
+}
+
+.sub_content .slogan strong {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.sub_content .slogan span {
+    font-weight: 500;
+    color: var(--c-main);
+}
+
+.sub_content .txt {
+    display: flex;
+    gap: 30px;
+}
+
+.sub_content .content .right .r_bt {
+    text-align: right;
+}
+
+.sub_content .content .right p {
+    margin: 0 0 10px 0;
+}
+
+.sub_content .content .right strong {
+    font-size: 18px;
+    font-weight: 500;
+}

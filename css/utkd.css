@@ -1,0 +1,864 @@
+:root {
+    --c-main: #3e0f7c;
+    --c-point: #b80e0e;
+    --c-sub: #8d1891;
+
+    --c-b: #000;
+    --c-bb: #333;
+    --c-g6: #666;
+    --c-g9: #999;
+    --c-line: #ddd;
+    --c-ww: #e2e2e2;
+    --c-wb: #f9f9f9;
+    --c-w: #fff;
+
+    --line: 1px solid #ddd;
+    --line-b: 1px solid rgba(0, 0, 0, 0.3);
+    --line-w: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* ───────────────────────────── header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--c-w);
+    border-bottom: var(--line);
+}
+
+.header .head_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.header h1 {
+    font-size: 0;
+}
+
+.header .gnb {}
+
+.header .gnb::before {
+    content: "";
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+    transition: 0.5s;
+}
+
+.header .gnb:hover::before {
+    height: 280px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .gnb>ul {
+    display: flex;
+    gap: 50px;
+}
+
+.header .gnb>ul>li {
+    position: relative;
+    line-height: 100px;
+}
+
+.header .gnb>ul>li>a {
+    display: block;
+}
+
+.header .sub {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    z-index: 999;
+    width: 110px;
+    height: 0;
+    overflow: hidden;
+
+    text-align: center;
+    line-height: 40px;
+    transition: 0.5s;
+}
+
+.header .gnb:hover>ul>li .sub {
+    height: 280px
+}
+
+.header .sub>li>a {
+    display: block;
+    font-size: 14px;
+    color: var(--c-g6);
+    transition: 0.5s;
+}
+
+.header .sub>li:hover>a {
+    color: var(--c-sub);
+}
+
+.header .user {
+    display: flex;
+    gap: 15px;
+}
+
+.header .user li {
+    line-height: 100px;
+}
+
+.header .user a {
+    display: block;
+    font-size: 12px;
+    color: var(--c-g6);
+    transition: 0.5s;
+}
+
+.header .user li:hover a {
+    color: var(--c-sub);
+}
+
+
+
+/* ───────────────────────────── main */
+/* 
+-----------------------------
+section
+MainVisual
+-----------------------------
+*/
+.main_visual {
+    position: relative;
+    overflow: hidden;
+}
+
+.main_visual .main_slide .itm {
+    position: relative;
+    height: 500px;
+}
+
+.main_visual .main_slide .itm01 {
+    background: url(../images/mainVi01.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slide .itm02 {
+    background: url(../images/mainVi02.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slide .itm03 {
+    background: url(../images/mainVi03.jpg) no-repeat center center/cover;
+}
+
+
+.main_visual .main_slide .itm::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    z-index: 999;
+
+    background-image: linear-gradient(to bottom, transparent, transparent 16.6667%, rgba(255, 255, 255, 0.1) 16.6667%), linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 16.6667%, rgba(255, 255, 255, 0.3) 16.6667%);
+    background-size: 5px 5px;
+    background-repeat: repeat;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    opacity: 50%;
+}
+
+.main_visual .main_slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.main_visual .main_slogan .text {
+    position: absolute;
+    right: 15px;
+    bottom: -250px;
+
+    padding: 50px;
+    width: calc(1200px - (1920px - 1200px));
+    height: 350px;
+    border-radius: 40px 0 0 0;
+    background: var(--c-w);
+    color: var(--c-g6);
+    text-align: right;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+}
+
+.main_visual .slogan {
+    margin: 0 0 20px 0;
+}
+
+.main_visual .slogan p {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 0 0 10px 0;
+}
+
+.main_visual .slogan h3 {
+    font-size: 60px;
+    font-weight: 700;
+    font-family: 'KIMM_Bold';
+}
+
+.main_visual .slogan h3 strong {
+    color: var(--c-bb);
+}
+
+.main_visual .main_slogan .text_slide {
+    position: relative;
+    z-index: 999;
+    padding: 5px 10px;
+    background: var(--c-wb);
+    color: var(--c-g6);
+    text-align: right;
+    border: var(--line);
+}
+
+.main_visual .main_slogan .text_slide::after {
+    content: "NEWS";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    padding: 7px 8px;
+    font-weight: 500;
+    color: var(--c-w);
+    background: var(--c-g6);
+    border: 1px solid var(--c-g6);
+    text-align: center;
+}
+
+.main_visual .text_slide p {
+    font-size: 14px;
+    line-height: 18px;
+
+}
+
+.main_visual .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.main_visual .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.main_visual .arrow i {
+    padding: 5px;
+    font-size: 20px;
+    background: var(--c-ww);
+    color: var(--c-g6);
+}
+
+.main_visual .arrow .left {
+    position: absolute;
+    top: calc(50% + 190px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 0 0 485px;
+}
+
+.main_visual .arrow .right {
+    position: absolute;
+    top: calc(50% + 190px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 0 0 520px;
+}
+
+
+
+
+/* 
+-----------------------------
+section
+MainStory
+-----------------------------
+*/
+
+
+.main_story {
+    background: var(--c-wb);
+}
+
+.main_story .con_tp {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 auto 30px auto;
+}
+
+.main_story .con_tp .event {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 3px 3px 3px 15px;
+    background: var(--c-ww);
+    font-size: 14px;
+}
+
+.main_story .con_tp .event strong {
+    color: var(--c-g6);
+}
+
+.main_story .con_tp .event .content {
+    position: relative;
+
+    display: flex;
+
+    width: 700px;
+    height: 20px;
+    background: var(--c-wb);
+    overflow: hidden;
+}
+
+.main_story .con_tp .event .content .role {
+    transform: translate(100%, 4px);
+    width: 100%;
+    animation: move 15s infinite linear;
+}
+
+.main_story .con_tp .event .content .role span {
+    color: var(--c-g6);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+@keyframes move {
+    from {
+        transform: translate(110%, 4px);
+    }
+
+    to {
+        transform: translate(-110%, 4px);
+    }
+}
+
+.main_story .con_bt {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+.main_story .st_left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main_story .st_left a {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    padding: 26px 20px 23px 20px;
+    background: var(--c-w);
+    border: var(--line);
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.main_story .st_left a::after {
+    content: "\e914";
+    font-family: xeicon;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translate(0, -50%);
+    font-size: 14px;
+    color: var(--c-sub);
+    vertical-align: middle;
+}
+
+/* 우 */
+.main_story .st_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_story .tit h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.main_story .tit p {
+    font-size: 14px;
+    color: var(--c-g9);
+}
+
+.main_story .st_right .list {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.main_story .st_right .list>* {
+    flex: 1;
+}
+
+.main_story .st_right .list a {
+    display: block;
+    padding: 75px 30px;
+
+    color: var(--c-bb);
+    background: var(--c-w);
+    border: var(--line);
+    text-align: center;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.main_story .st_right .list i {
+    display: block;
+    margin: 0 0 8px 0;
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+.main_story .st_right .list li:hover a,
+.main_story .st_left li:hover a {
+    color: var(--c-sub);
+}
+
+.main_story .st_right .list li:hover i {
+    transform: rotateY(360deg);
+    transition: 0.5s;
+}
+
+/* 
+-----------------------------
+section
+MainNotice
+-----------------------------
+*/
+
+.main_notice .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.main_notice .tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 0 20px 0;
+    padding: 0 10px;
+    background: var(--c-w);
+}
+
+.main_notice .tit h3 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.main_notice .tit a {
+    display: block;
+}
+
+.main_notice .tit span {
+    position: relative;
+    font-size: 14px;
+    color: var(--c-g9);
+}
+
+.main_notice .tit span::after {
+    content: "\e914";
+    font-family: xeicon;
+    color: var(--c-sub);
+
+    margin: 0 0 0 5px;
+}
+
+
+
+/* 
+notice_left / 왼
+ */
+.main_notice .notice_left .list {
+    padding: 25px 20px;
+    background: var(--c-wb);
+    border-top: var(--line);
+}
+
+.main_notice .notice_left .list>li {
+    position: relative;
+}
+
+.main_notice .notice_left .list>li>a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 15px;
+    line-height: 50px;
+}
+
+.main_notice .notice_left .list>li~li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--c-ww);
+}
+
+.main_notice .notice_left .list p {
+    position: relative;
+}
+
+.main_notice .notice_left .list p::before {
+    content: "\e91b";
+    font-family: xeicon;
+    font-size: 12px;
+    color: var(--c-g9);
+    margin: 0 5px 0 0;
+}
+
+.main_notice .notice_left .list span {
+    font-size: 13px;
+    color: var(--c-g9);
+}
+
+
+
+
+/* 
+notice_right / 오
+ */
+
+.main_notice .gallery {
+    position: relative;
+    display: flex;
+    max-width: 570px;
+}
+
+.main_notice .gallery>* {
+    flex: 1 0 200px;
+}
+
+.main_notice .gallery_slide {
+    width: 100px;
+}
+
+.main_notice .gallery_slide .itm {
+    height: 300px;
+    background: var(--c-main);
+}
+
+.main_notice .gallery_slide .itm01 {
+    background: url(../images/mainNR01.jpg) no-repeat center center/cover;
+}
+
+.main_notice .gallery_slide .itm02 {
+    background: url(../images/mainNR02.jpg) no-repeat center center/cover;
+}
+
+.main_notice .gallery_slide .itm03 {
+    background: url(../images/mainNR03.jpg) no-repeat center center/cover;
+}
+
+.main_notice .gallery_slide .itm04 {
+    background: url(../images/mainNR04.jpg) no-repeat center center/cover;
+}
+
+.main_notice .gallery_slide .itm05 {
+    background: url(../images/mainNR05.jpg) no-repeat center center/cover;
+}
+
+.main_notice .gallery_text_slide {
+    width: 100px;
+    max-height: 300px;
+    background: var(--c-wb);
+    border-top: var(--line);
+}
+
+.main_notice .gallery_text_slide .desc {
+    height: 100%;
+    padding: 40px 30px;
+}
+
+.main_notice .desc strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    margin: 0 0 20px 0;
+}
+
+.main_notice .desc span {
+    font-size: 14px;
+    color: var(--c-g6);
+}
+
+.main_notice .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.main_notice .arrow i {
+    padding: 5px;
+    font-size: 20px;
+    background: var(--c-ww);
+    color: var(--c-g6);
+}
+
+.main_notice .arrow .left {
+    position: absolute;
+    top: calc(50% + 120px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 0 0 220px;
+}
+
+.main_notice .arrow .right {
+    position: absolute;
+    top: calc(50% + 120px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 0 0 255px;
+}
+
+
+
+
+
+/* 
+-----------------------------
+section
+Main Taekwondo
+-----------------------------
+*/
+
+.main_taekwondo {
+    position: relative;
+    padding: 100px 0;
+    background: url(../images/mT.jpg) no-repeat center right/cover;
+    overflow: hidden;
+}
+
+.main_taekwondo .content::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.8) 70%);
+    backdrop-filter: blur(30px);
+}
+
+.main_taekwondo .content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main_taekwondo .content .left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+}
+
+.main_taekwondo .content .left .video {
+    width: calc(1200px - 150px);
+    height: 500px;
+    object-fit: fill;
+    border-radius: 0 40px 0 0;
+    filter: grayscale(0.5) brightness(85%);
+    overflow: hidden;
+}
+
+.main_taekwondo .content .right {
+    text-align: center;
+    z-index: 999;
+    height: 300px;
+}
+
+.main_taekwondo .slogan {
+    margin: 0 0 40px 0;
+}
+
+.main_taekwondo .slogan h3 {
+    font-size: 70px;
+    font-weight: 700;
+    font-family: 'KIMM_Bold';
+    color: var(--c-main);
+
+    margin: 0 0 25px 0;
+}
+
+.main_taekwondo .slogan h3 span {
+    display: block;
+    font-size: 28px;
+    color: var(--c-g6);
+    letter-spacing: 5px;
+    font-weight: 100;
+    margin: 0 -5px 15px 0;
+
+    font-family: 'Noto Sans Kr';
+}
+
+.main_taekwondo .slogan h3 strong {
+    display: block;
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--c-g6);
+    letter-spacing: 40px;
+    margin: 0 -40px 10px 0;
+    font-family: 'Roboto';
+}
+
+.main_taekwondo .slogan p {
+    font-size: 12px;
+    font-weight: 100;
+    font-style: italic;
+    line-height: 22px;
+}
+
+.main_taekwondo .ctr {
+    text-align: center;
+}
+
+.main_taekwondo .ctr i {
+    padding: 10px 9px 10px 10px;
+    font-size: 18px;
+    color: var(--c-main);
+    background: var(--c-w);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin: 0 4px 0 0;
+
+    transition: 0.5s;
+}
+
+.main_taekwondo .ctr i:hover {
+    background: var(--c-main);
+    color: var(--c-wb);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ───────────────────────────── footer */
+.footer {
+    padding: 60px 0;
+    background: var(--c-wb);
+    color: var(--c-g6);
+}
+
+.footer .ft {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 40px 0;
+}
+
+.footer .ft::after {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--c-line);
+}
+
+.footer .foot_customer {
+    display: flex;
+    gap: 30px;
+}
+
+.footer .foot_customer a {
+    display: block;
+}
+
+.footer .foot_customer strong {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--c-point);
+}
+
+.footer .foot_sns {
+    display: flex;
+    gap: 10px;
+}
+
+.footer .foot_sns i {
+    padding: 5px;
+    font-size: 18px;
+    background: var(--c-ww);
+    color: var(--c-g6);
+    border-radius: 50%;
+}
+
+.footer .fb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .foot_address {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0 0 10px 0;
+    font-size: 15px;
+}
+
+.footer .foot_address .tel {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--c-b);
+}
+
+.footer .foot_copyright {
+    font-size: 14px;
+    color: var(--c-g9);
+}
+
+
+.footer #fl {
+    outline: none;
+    border: var(--line);
+    background: none;
+    font-family: 'Noto Sans Kr';
+    font-size: 14px;
+    padding: 4px 10px 5px 10px;
+    color: var(--c-g6);
+}
