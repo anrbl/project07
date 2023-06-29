@@ -13,7 +13,7 @@
     --c-w: #fff;
 
     --line: 1px solid #ddd;
-    --line-b: 1px solid rgba(0, 0, 0, 0.3);
+    --line-b: 1px solid rgba(0, 0, 0, 0.2);
     --line-w: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -61,6 +61,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
 .header .gnb>ul {
     display: flex;
     gap: 50px;
@@ -71,6 +72,36 @@
     line-height: 100px;
 }
 
+.header .gnb>ul>li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 0;
+    height: 5px;
+    background: var(--c-main);
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.header .gnb>ul>li:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+
+.header .gnb>ul>li~li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    transform: translate(0, -50%);
+    width: 1px;
+    height: 12px;
+    background: var(--c-line);
+}
+
 .header .gnb>ul>li>a {
     display: block;
 }
@@ -79,7 +110,7 @@
     position: absolute;
     top: 100px;
     left: 50%;
-    transform: translate(-50%, 10px);
+    transform: translate(-50%, 0);
     z-index: 999;
     width: 110px;
     height: 0;
@@ -91,7 +122,8 @@
 }
 
 .header .gnb:hover>ul>li .sub {
-    height: 280px
+    height: 280px;
+    transform: translate(-50%, 10px);
 }
 
 .header .sub>li>a {
@@ -318,17 +350,17 @@ MainStory
 }
 
 .main_story .con_tp .event strong {
+    display: inline-block;
+    margin: 0 auto;
     color: var(--c-g6);
 }
 
 .main_story .con_tp .event .content {
     position: relative;
 
-    display: flex;
-
     width: 700px;
     height: 20px;
-    background: var(--c-wb);
+    background: var(--c-w);
     overflow: hidden;
 }
 
@@ -345,12 +377,12 @@ MainStory
 }
 
 @keyframes move {
-    from {
-        transform: translate(110%, 4px);
+    0% {
+        transform: translate(100%, 4px);
     }
 
-    to {
-        transform: translate(-110%, 4px);
+    100% {
+        transform: translate(-50%, 4px);
     }
 }
 
@@ -426,7 +458,6 @@ MainStory
     border: var(--line);
     text-align: center;
     border-radius: 5px;
-    transition: 0.5s;
 }
 
 .main_story .st_right .list i {
@@ -466,7 +497,6 @@ MainNotice
 
     margin: 0 0 20px 0;
     padding: 0 10px;
-    background: var(--c-w);
 }
 
 .main_notice .tit h3 {
@@ -497,8 +527,19 @@ MainNotice
 /* 
 notice_left / 왼
  */
+.main_notice .notice_left {
+    transform: translate(0, 100px);
+    opacity: 0;
+    transition: 0.5s 0.3s;
+}
+
+.main_notice.on .notice_left {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
 .main_notice .notice_left .list {
-    padding: 25px 20px;
+    padding: 15px 20px;
     background: var(--c-wb);
     border-top: var(--line);
 }
@@ -514,7 +555,11 @@ notice_left / 왼
     gap: 10px;
 
     font-size: 15px;
-    line-height: 50px;
+    line-height: 45px;
+}
+
+.main_notice .notice_left .list>li:hover {
+    color: var(--c-main);
 }
 
 .main_notice .notice_left .list>li~li::after {
@@ -532,11 +577,11 @@ notice_left / 왼
 }
 
 .main_notice .notice_left .list p::before {
-    content: "\e91b";
+    content: "·";
     font-family: xeicon;
     font-size: 12px;
     color: var(--c-g9);
-    margin: 0 5px 0 0;
+    margin: 0 10px 0 0;
 }
 
 .main_notice .notice_left .list span {
@@ -550,6 +595,17 @@ notice_left / 왼
 /* 
 notice_right / 오
  */
+
+.main_notice .notice_right {
+    transform: translate(0, 100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.main_notice.on .notice_right {
+    transform: translate(0, 0);
+    opacity: 1;
+}
 
 .main_notice .gallery {
     position: relative;
@@ -679,14 +735,14 @@ Main Taekwondo
     flex-direction: column;
 }
 
-.main_taekwondo .content .left {
+.main_taekwondo .content .tkd_left {
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: 998;
 }
 
-.main_taekwondo .content .left .video {
+.main_taekwondo .content .tkd_left .video {
     width: calc(1200px - 150px);
     height: 500px;
     object-fit: fill;
@@ -695,14 +751,23 @@ Main Taekwondo
     overflow: hidden;
 }
 
-.main_taekwondo .content .right {
+.main_taekwondo .content .tkd_right {
     text-align: center;
     z-index: 999;
     height: 300px;
+
+    transform: translate(0, 100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.main_taekwondo.on .content .tkd_right {
+    transform: translate(0, 0);
+    opacity: 1;
 }
 
 .main_taekwondo .slogan {
-    margin: 0 0 40px 0;
+    margin: 0 0 25px 0;
 }
 
 .main_taekwondo .slogan h3 {
@@ -711,7 +776,7 @@ Main Taekwondo
     font-family: 'KIMM_Bold';
     color: var(--c-main);
 
-    margin: 0 0 25px 0;
+    margin: 0 0 15px 0;
 }
 
 .main_taekwondo .slogan h3 span {
@@ -736,10 +801,10 @@ Main Taekwondo
 }
 
 .main_taekwondo .slogan p {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 100;
     font-style: italic;
-    line-height: 22px;
+    line-height: 26px;
 }
 
 .main_taekwondo .ctr {
@@ -773,12 +838,151 @@ Main Taekwondo
 
 
 
+.main_visitor .content {
+    display: grid;
+    grid-template-columns: 1fr 720px;
+    gap: 30px;
+}
+
+.main_visitor .tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 0 20px 0;
+    padding: 0 10px;
+}
+
+.main_visitor .tit h3 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.main_visitor .tit a {
+    display: block;
+}
+
+.main_visitor .tit span {
+    position: relative;
+    font-size: 14px;
+    color: var(--c-g9);
+}
+
+.main_visitor .tit span::after {
+    content: "\e914";
+    font-family: xeicon;
+    color: var(--c-sub);
+
+    margin: 0 0 0 5px;
+}
+
+.main_visitor .vis_left {
+    transform: translate(0, 100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.main_visitor.on .vis_left {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.main_visitor .vis_left .list {
+    padding: 15px 20px;
+    background: var(--c-wb);
+    border-top: var(--line);
+}
+
+.main_visitor .vis_left .list>li {
+    position: relative;
+}
+
+.main_visitor .vis_left .list>li>a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 15px;
+    line-height: 45px;
+}
+
+.main_visitor .vis_left .list>li:hover {
+    color: var(--c-main);
+}
+
+.main_visitor .vis_left .list>li~li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--c-ww);
+}
+
+.main_visitor .vis_left .list p {
+    position: relative;
+}
+
+.main_visitor .vis_left .list p::before {
+    content: "·";
+    font-family: xeicon;
+    font-size: 12px;
+    color: var(--c-g9);
+    margin: 0 10px 0 0;
+}
+
+.main_visitor .vis_left .list span {
+    font-size: 13px;
+    color: var(--c-g9);
+}
+
+.main_visitor .vis_right {
+    transform: translate(0, 100px);
+    opacity: 0;
+    transition: 0.5s 0.3s;
+}
+
+.main_visitor.on .vis_right {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.main_visitor .vis_right .map {
+    height: 300px;
+    overflow: hidden;
+}
+
+.main_visitor .vis_right .map .root_daum_roughmap {
+    width: 720px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ───────────────────────────── footer */
 .footer {
     padding: 60px 0;
     background: var(--c-wb);
     color: var(--c-g6);
+}
+
+.footer .foot_wrap {
+    display: grid;
+    grid-template-columns: 172px 1fr;
+    gap: 30px;
+    justify-content: space-between;
 }
 
 .footer .ft {
@@ -802,6 +1006,10 @@ Main Taekwondo
 .footer .foot_customer {
     display: flex;
     gap: 30px;
+}
+
+.footer .foot_customer li {
+    position: relative;
 }
 
 .footer .foot_customer a {
@@ -840,9 +1048,27 @@ Main Taekwondo
     font-size: 15px;
 }
 
+.footer .foot_address li {
+    position: relative;
+}
+
+
+
+.footer .foot_customer li~li::after,
+.footer .foot_address li~li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translate(0, -50%);
+    height: 2px;
+    width: 2px;
+    border-radius: 50%;
+    background: var(--c-g9);
+}
+
 .footer .foot_address .tel {
     display: inline-block;
-    font-size: 16px;
     font-weight: 500;
     color: var(--c-b);
 }
@@ -855,10 +1081,31 @@ Main Taekwondo
 
 .footer #fl {
     outline: none;
-    border: var(--line);
+    border: var(--line-b);
     background: none;
     font-family: 'Noto Sans Kr';
     font-size: 14px;
     padding: 4px 10px 5px 10px;
     color: var(--c-g6);
+}
+
+
+
+
+
+
+
+/* to_top */
+.to_top {
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+
+    display: none;
+    cursor: pointer;
+}
+
+.to_top i {
+    font-size: 40px;
+    color: var(--c-main);
 }

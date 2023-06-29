@@ -1,5 +1,22 @@
 $(function () {
-
+    $(window).scroll(function () {
+        let sct = $(window).scrollTop()
+        sct > 100 ? $('.to_top').fadeIn() : $('.to_top').fadeOut(0);
+    });
+    $('.to_top').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, 600);
+    });
+    //스크롤반응.on붙이기
+    $(window).on('scroll', function () {
+        let sct = $(window).scrollTop();
+        $('.effect').each(function () {
+            if (sct + $(window).innerHeight() - 200 > $(this).offset().top) {
+                $(this).addClass('on')
+            } else {
+                $(this).removeClass('on')
+            }
+        });
+    });
     //메인비쥬얼
     $('.main_slide').slick({
         arrows: false,
@@ -27,7 +44,7 @@ $(function () {
         autoPlay: false,
         mute: true,
         showControls: false,
-
+        startAt: 2,
     });
     $('.main_taekwondo .pause').on('click', function () {
         $('#taekwonVideo').YTPPause();

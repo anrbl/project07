@@ -12,12 +12,87 @@
     --c-wb: #f9f9f9;
     --c-w: #fff;
 
-    --line: 1px solid #ddd;
+    --line: 1px solid #f2f2f2;
     --line-b: 1px solid rgba(0, 0, 0, 0.3);
     --line-w: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 
+.sub_top {
+    border-bottom: var(--line);
+}
+
+.sub_top .top_wrap {
+    position: relative;
+    height: 300px;
+    background: url(../images/mT.jpg) no-repeat center center/cover;
+}
+
+.sub_top .top_wrap::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.5) 100%);
+    backdrop-filter: blur(1px) brightness(90%);
+}
+
+.sub_top .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sub_top .title h2 {
+    font-size: 55px;
+    color: var(--c-w);
+}
+
+.sub_top .title p {
+    color: var(--c-bb);
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin: 0 -5px 0 0;
+}
+
+
+.sub_top .menu_way {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 10px 0;
+}
+
+.sub_top .menu_way li {
+    position: relative;
+}
+
+.sub_top .menu_way li:not(:last-child)::after {
+    content: "\F27B";
+    font-family: bootstrap-icons;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translate(0, -50%);
+    color: var(--c-g6);
+    font-size: 10px;
+}
+
+.sub_top .menu_way li a {
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--c-g6);
+}
 
 
 
@@ -25,35 +100,85 @@
 
 
 
+
+
+/* ------------------------------------------ */
+.sub_content {
+    padding: 100px 0;
+}
+
+.sub_content .menu {
+    left: 0;
+    width: 150px;
+    height: 500px;
+    background: var(--c-sub);
+}
 
 .sub_content .slogan {
-    margin: 0 0 50px 0;
+    position: relative;
+    margin: 0 0 80px 0;
+    text-align: center;
+}
+
+.sub_content .slogan::before {
+    content: "\F6B0";
+    font-family: bootstrap-icons;
+    position: absolute;
+    top: -10px;
+    left: 100px;
+    font-size: 30px;
+    color: var(--c-line);
+}
+
+.sub_content .slogan::after {
+    content: "\F6B0";
+    font-family: bootstrap-icons;
+    position: absolute;
+    bottom: -10px;
+    right: 100px;
+    transform: rotate(180deg);
+    font-size: 30px;
+    color: var(--c-line);
+}
+
+.sub_content .slogan p {
+    font-size: 35px;
+    line-height: 40px;
+    font-weight: 300;
 }
 
 .sub_content .slogan strong {
-    font-size: 23px;
     font-weight: 700;
 }
 
 .sub_content .slogan span {
-    font-weight: 500;
+    font-weight: 400;
     color: var(--c-main);
 }
 
 .sub_content .txt {
-    display: flex;
+    display: grid;
+    grid-template-columns: 130px 1fr;
     gap: 30px;
 }
 
-.sub_content .content .right .r_bt {
+.sub_content .tright p {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 30px 0;
+    color: var(--c-bb);
+}
+
+
+.sub_content .content .tright .r_bt {
     text-align: right;
 }
 
-.sub_content .content .right p {
+.sub_content .content .tright .r_bt p {
     margin: 0 0 10px 0;
 }
 
-.sub_content .content .right strong {
-    font-size: 18px;
+.sub_content .content .tright strong {
+    font-size: 22px;
     font-weight: 500;
 }
