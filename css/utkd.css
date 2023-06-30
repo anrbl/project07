@@ -1109,3 +1109,573 @@ Main Taekwondo
     font-size: 40px;
     color: var(--c-main);
 }
+
+
+
+
+
+
+
+
+
+@media (max-width:768px) {
+    .body {
+        overflow-x: hidden;
+    }
+
+    .header .gnb>ul,
+    .header .user {
+        display: none;
+    }
+
+
+    .main_visual {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .main_visual .main_slogan {
+        height: 100%;
+    }
+
+    .main_visual .main_slogan .text {
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        transform: translate(50%, 0);
+
+        padding: 40px 40px 50px 40px;
+        width: calc(100% - 30px);
+        height: auto;
+        border-radius: 20px 20px 0 0;
+        text-align: center;
+    }
+
+    .main_visual .slogan p {
+        letter-spacing: 0;
+    }
+
+    .main_visual .slogan h3 {
+        font-size: 50px;
+    }
+
+    .main_visual .main_slogan .text_slide {
+        display: none;
+    }
+
+    .main_visual .arrow .left {
+        position: absolute;
+        top: calc(50% + 210px);
+        margin: 0 0 0 -30px;
+    }
+
+    .main_visual .arrow .right {
+        position: absolute;
+        top: calc(50% + 210px);
+        margin: 0 0 0 30px;
+    }
+
+    .main_visual .main_slide .itm01 {
+        background: url(../images/mainVi01.jpg) no-repeat bottom center/cover;
+    }
+
+    .main_visual .main_slide .itm02 {
+        background: url(../images/mainVi02.jpg) no-repeat center center/cover;
+    }
+
+    .main_visual .main_slide .itm03 {
+        background: url(../images/mainVi03.jpg) no-repeat bottom center/cover;
+    }
+
+
+
+    .main_story .con_tp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto 30px auto;
+    }
+
+    .main_story .con_tp .event {
+        display: none;
+    }
+
+    .main_story .con_bt {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main_story .st_left {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main_story .st_left a {
+        padding: 16px 15px 13px 15px;
+        font-size: 14px;
+    }
+
+
+    /* 우 */
+    .main_story .st_right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .main_story .st_right .list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+
+    .main_story .st_right .list a {
+        padding: 35px 20px;
+        font-size: 14px;
+    }
+
+    .main_story .st_right .list i {
+        font-size: 35px;
+    }
+
+    .main_story .st_right .list li:hover i {
+        transform: rotateY(0);
+    }
+
+
+    /* ----------------------- */
+
+
+    .main_notice .content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .main_notice .tit h3 {
+        font-size: 20px;
+    }
+
+    .main_notice .tit span {
+        font-size: 12px;
+    }
+
+    /* 
+    notice_left / 왼
+     */
+    .main_notice .notice_left {
+        transform: translate(0, 0);
+        opacity: 1;
+        transition: 0;
+    }
+
+    .main_notice.on .notice_left {
+        transform: translate(0, 0);
+    }
+
+
+    .main_notice .notice_left .list>li>a {
+        font-size: 14px;
+        line-height: 40px;
+        white-space: nowrap;
+    }
+
+    .main_notice .notice_left .list p::before {
+        font-size: 12px;
+        margin: 0 5px 0 0;
+    }
+
+    .main_notice .notice_left .list span {
+        font-size: 10px;
+    }
+
+
+
+
+    /* 
+    notice_right / 오
+     */
+
+    .main_notice .notice_right {
+        display: none;
+        transform: translate(0, 0);
+        opacity: 1;
+        transition: 0;
+    }
+
+    .main_notice.on .notice_right {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    .main_notice .gallery {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+    .main_notice .gallery_slide {
+        width: 100%;
+    }
+
+    .main_notice .gallery_slide .itm {
+        height: 200px;
+    }
+
+    .main_notice .gallery_slide .itm01 {
+        background: url(../images/mainNR01.jpg) no-repeat center center/cover;
+    }
+
+    .main_notice .gallery_slide .itm02 {
+        background: url(../images/mainNR02.jpg) no-repeat center center/cover;
+    }
+
+    .main_notice .gallery_slide .itm03 {
+        background: url(../images/mainNR03.jpg) no-repeat center center/cover;
+    }
+
+    .main_notice .gallery_slide .itm04 {
+        background: url(../images/mainNR04.jpg) no-repeat center center/cover;
+    }
+
+    .main_notice .gallery_slide .itm05 {
+        background: url(../images/mainNR05.jpg) no-repeat center center/cover;
+    }
+
+    .main_notice .gallery_text_slide {
+        width: 100%;
+    }
+
+    .main_notice .gallery_text_slide .desc {
+        height: 100%;
+        padding: 40px 30px;
+    }
+
+    .main_notice .desc strong {
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        margin: 0 0 20px 0;
+    }
+
+    .main_notice .desc span {
+        font-size: 14px;
+        color: var(--c-g6);
+    }
+
+    .main_notice .arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+
+    .main_notice .arrow i {
+        padding: 5px;
+        font-size: 20px;
+        background: var(--c-ww);
+        color: var(--c-g6);
+    }
+
+    .main_notice .arrow .left {
+        position: absolute;
+        top: calc(50% + 120px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 0 0 220px;
+    }
+
+    .main_notice .arrow .right {
+        position: absolute;
+        top: calc(50% + 120px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 0 0 255px;
+    }
+
+
+
+
+
+    /* 
+    -----------------------------
+    section
+    Main Taekwondo
+    -----------------------------
+    */
+
+    .main_taekwondo {
+        position: relative;
+        padding: 100px 0;
+        background: url(../images/mT.jpg) no-repeat center right/cover;
+        overflow: hidden;
+    }
+
+    .main_taekwondo .content::after {
+        content: "";
+        position: absolute;
+        inset: 0 0 0 0;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.8) 70%);
+        backdrop-filter: blur(30px);
+    }
+
+    .main_taekwondo .content {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .main_taekwondo .content .tkd_left {
+        display: none;
+    }
+
+    .main_taekwondo .content .tkd_right {
+        text-align: center;
+        z-index: 999;
+        height: auto;
+
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    .main_taekwondo .slogan {
+        margin: 0 0 0 0;
+    }
+
+    .main_taekwondo .slogan h3 {
+        font-size: 60px;
+        font-weight: 700;
+        font-family: 'KIMM_Bold';
+        color: var(--c-main);
+
+        margin: 0 0 20px 0;
+    }
+
+    .main_taekwondo .slogan h3 span {
+        display: block;
+        font-size: 20px;
+        color: var(--c-g6);
+        letter-spacing: 5px;
+        font-weight: 100;
+        margin: 0 -5px 15px 0;
+
+        font-family: 'Noto Sans Kr';
+    }
+
+    .main_taekwondo .slogan h3 strong {
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--c-g6);
+        letter-spacing: 40px;
+        margin: 0 -40px 10px 0;
+        font-family: 'Roboto';
+    }
+
+    .main_taekwondo .slogan p {
+        font-size: 14px;
+        font-weight: 100;
+        font-style: italic;
+        line-height: 26px;
+    }
+
+    .main_taekwondo .ctr {
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .main_visitor .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        width: calc(100% - 30px);
+    }
+
+    .main_visitor .tit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: 0 0 20px 0;
+        padding: 0 10px;
+    }
+
+    .main_visitor .tit h3 {
+        font-size: 20px;
+    }
+
+    .main_visitor .tit span {
+        font-size: 12px;
+    }
+
+    .main_visitor .vis_left {
+        transform: translate(0, 0);
+        opacity: 1;
+        transition: 0;
+    }
+
+    .main_visitor .vis_left .list {
+        padding: 15px 20px;
+        background: var(--c-wb);
+        border-top: var(--line);
+    }
+
+    .main_visitor .vis_left .list>li {
+        position: relative;
+    }
+
+    .main_visitor .vis_left .list>li>a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        font-size: 15px;
+        line-height: 45px;
+    }
+
+    .main_visitor .vis_left .list>li:hover {
+        color: var(--c-main);
+    }
+
+    .main_visitor .vis_left .list>li~li::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--c-ww);
+    }
+
+    .main_visitor .vis_left .list p {
+        position: relative;
+    }
+
+    .main_visitor .vis_left .list p::before {
+        content: "·";
+        font-family: xeicon;
+        font-size: 12px;
+        color: var(--c-g9);
+        margin: 0 10px 0 0;
+    }
+
+    .main_visitor .vis_left .list span {
+        font-size: 13px;
+        color: var(--c-g9);
+    }
+
+    .main_visitor .vis_right {
+        transform: translate(0, 0);
+        opacity: 1;
+        transition: 0;
+    }
+
+    .main_visitor .vis_right .map {
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .main_visitor .vis_right .map .root_daum_roughmap {
+        width: 720px;
+    }
+
+
+
+
+
+
+
+    .footer {
+        padding: 40px 0;
+    }
+
+    .footer .foot_wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .footer .ft {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        align-items: center;
+        margin: 0 0 30px 0;
+    }
+
+    .footer h2 {
+        text-align: center;
+    }
+
+    .footer .foot_customer {
+        display: flex;
+        gap: 30px;
+    }
+
+    .footer .foot_customer a {
+        display: block;
+        font-size: 13px;
+    }
+
+    .footer .foot_customer strong {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--c-point);
+    }
+
+    .footer .foot_sns {
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer .foot_sns i {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .footer .fb {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .footer .foot_address {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        margin: 0 0 10px 0;
+    }
+
+    .footer .foot_copyright {
+        font-size: 12px;
+    }
+
+    .footer .ft::after,
+    .footer .foot_address li~li::after,
+    .footer #fl {
+        display: none;
+    }
+
+}
